@@ -1,3 +1,17 @@
+/*
+ * File: EmptyState.tsx
+ * Project: cv-viewer
+ * Version 0.1.0
+ * File Created: Tuesday, 26th January 2021 1:06:24 pm
+ * Author: Eoan O'Dea (eoan@web-space.design)
+ * -----
+ * File Description:
+ * Last Modified: Tuesday, 26th January 2021 1:52:49 pm
+ * Modified By: Eoan O'Dea (eoan@web-space.design>)
+ * -----
+ * Copyright 2021 WebSpace, WebSpace
+ */
+
 /**
  * Primary dependencies
  */
@@ -9,10 +23,12 @@ import {
   createStyles,
   Card,
   CardHeader,
+  Theme,
+  WithStyles,
 } from "@material-ui/core";
 import { Replay, Error } from "@material-ui/icons";
 
-const styles = ({ spacing }) =>
+const styles = ({ spacing }: Theme) =>
   createStyles({
     wrapper: {
       padding: spacing(4),
@@ -31,16 +47,28 @@ const styles = ({ spacing }) =>
     },
   });
 
+type IProps = {
+  message?: string;
+  action?: () => void;
+  actionLabel?: string;
+  classes: {
+    wrapper: string;
+    icon: string;
+    header: string;
+    iconContainer: string;
+  };
+};
+
 /**
  * Renders an Error
  *  for the application
  */
 const EmptyState = ({
-  message,
+  message = undefined,
   classes,
-  action,
+  action = undefined,
   actionLabel = "Try Again",
-}) => (
+}: IProps) => (
   <Card elevation={3} className={classes.wrapper}>
     <div className={classes.iconContainer}>
       <Error color="error" className={classes.icon} />
