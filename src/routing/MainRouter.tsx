@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Tuesday, 26th January 2021 1:52:21 pm
+ * Last Modified: Tuesday, 2nd February 2021 3:02:47 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -17,8 +17,7 @@ import { Route, Switch } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 
 import Home from "../pages/Home";
-
-// import routes from "./routes";
+import CV from "../pages/CV";
 
 const MainRouter = () => {
   return (
@@ -32,10 +31,10 @@ const MainRouter = () => {
         <Grid item xs={11}>
           <Switch>
             <Route exact path="/" component={Home} />
-
-            {/* {routes.map(({ link, component }, i) => (
-              <Route path={link} component={component} key={i} />
-            ))} */}
+            <Route
+              path="/cv/:lang"
+              render={(props) => <CV lang={props.match.params.lang} />}
+            />
           </Switch>
         </Grid>
       </Grid>
