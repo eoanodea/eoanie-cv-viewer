@@ -5,17 +5,12 @@
  * File Created: Sunday, 7th February 2021 11:59:39 am
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
- * File Description: 
- * Last Modified: Sunday, 7th February 2021 5:22:12 pm
+ * File Description:
+ * Last Modified: Sunday, 7th February 2021 5:30:01 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
  */
-
-
-
-
-
 
 /**
  * Primary dependencies
@@ -71,7 +66,7 @@ const Header = ({ history }: any) => {
   return (
     <AppBar position="sticky">
       <Toolbar style={{ justifyContent: "space-between" }}>
-        <IconButton component={Link} to="/">
+        <IconButton aria-label="Home" component={Link} to="/">
           <Home />
         </IconButton>
 

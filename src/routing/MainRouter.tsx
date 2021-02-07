@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 5:19:12 pm
+ * Last Modified: Sunday, 7th February 2021 5:37:20 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -20,6 +20,7 @@ import Home from "../pages/Home";
 import CV from "../pages/CV";
 import Header from "../components/layout/Header";
 import Contact from "../pages/Contact";
+import EmptyState from "../components/global/EmptyState";
 
 const MainRouter = () => {
   return (
@@ -38,6 +39,12 @@ const MainRouter = () => {
               render={(props) => <CV lang={props.match.params.lang} />}
             />
             <Route path="/contact" component={Contact} />
+
+            <Route
+              render={() => (
+                <EmptyState message="The page you are looking for does not exist" />
+              )}
+            />
           </Switch>
         </Grid>
       </Grid>

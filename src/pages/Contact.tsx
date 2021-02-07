@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 1:52:26 pm
+ * Last Modified: Sunday, 7th February 2021 5:30:01 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -63,30 +63,35 @@ const Contact = ({ classes }: IProps) => {
       secondary: "@eoanodea",
       link: "https://github.com/eoanodea",
       icon: <GitHub />,
+      ariaLabel: "Open my Github account",
     },
     {
       name: "Linkedin",
       secondary: "@eoanodea",
       link: "https://www.linkedin.com/in/eoanodea/",
       icon: <LinkedIn />,
+      ariaLabel: "Open my Linkedin",
     },
     {
       name: "My Portfolio",
       secondary: "It's unfinished dont judge me",
       link: "https://about.eoan.ie",
       icon: <LinkIcon />,
+      ariaLabel: "Open my portfolio website",
     },
     {
       name: "Get in touch",
       secondary: "Send me an email",
       link: "https://about.eoan.ie#contact",
       icon: <Send />,
+      ariaLabel: "Open my contact form",
     },
     {
       name: "WebSpace",
       secondary: "Hire me as a developer",
       link: "https://web-space.design",
       icon: <Cloud />,
+      ariaLabel: "Open my website",
     },
   ];
   return (
@@ -99,6 +104,7 @@ const Contact = ({ classes }: IProps) => {
             <ListItem
               className={classes.listLinks}
               button
+              aria-label={item.ariaLabel}
               key={i}
               component={Link}
               href={item.link}
