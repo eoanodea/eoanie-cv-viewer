@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 5:30:01 pm
+ * Last Modified: Sunday, 7th February 2021 5:55:45 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -109,6 +109,7 @@ const Contact = ({ classes }: IProps) => {
               component={Link}
               href={item.link}
               target="_blank"
+              rel="noreferrer"
             >
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.name} secondary={item.secondary} />

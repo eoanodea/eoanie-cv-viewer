@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 5:47:59 pm
+ * Last Modified: Sunday, 7th February 2021 5:55:45 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -93,6 +93,7 @@ const Header = ({ history }: any) => {
           <IconButton
             aria-label="View Code on Github"
             href="https://github.com/eoanodea/eoanie-cv-viewer"
+            rel="noreferrer"
             target="_blank"
           >
             <GitHub />
