@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 2:10:01 pm
+ * Last Modified: Sunday, 7th February 2021 5:19:12 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -27,7 +27,6 @@ const MainRouter = () => {
       <Header />
       <Grid
         container
-        spacing={8}
         justify="center"
         style={{ marginTop: "20px", marginBottom: "20px" }}
       >

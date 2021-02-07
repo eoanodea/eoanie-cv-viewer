@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 2:35:22 pm
+ * Last Modified: Sunday, 7th February 2021 5:21:05 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -94,6 +94,7 @@ const Header = ({ history }: any) => {
                 label={isEnglish ? "English 🇮🇪" : "Deutsch 🇩🇪"}
               />
               <IconButton
+                aria-label="Download CV"
                 href={config[window.location.pathname.split("cv/")[1]]}
                 download={`eoanodea-cv-${
                   window.location.pathname.split("cv/")[1]
@@ -104,17 +105,15 @@ const Header = ({ history }: any) => {
             </React.Fragment>
           )}
           <IconButton
+            aria-label="View Code on Github"
             href="https://github.com/eoanodea/eoanie-cv-viewer"
             target="_blank"
           >
             <GitHub />
           </IconButton>
-          <IconButton component={Link} to="/contact">
+          <IconButton aria-label="Contact" component={Link} to="/contact">
             <Mail />
           </IconButton>
-          {/* <IconButton href="https://about.eoan.ie/#contact" target="_blank">
-            <Mail />
-          </IconButton> */}
         </div>
       </Toolbar>
     </AppBar>

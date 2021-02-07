@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1.0, 
+    user-scalable=0"
+    />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
@@ -74,17 +78,14 @@
         justify-content: center;
         align-items: center;
       }
-      .container h1,
-      .container p {
+      h1,
+      p {
+        font-family: Roboto, sans-serif;
         -webkit-animation: fadein 0.8s; /* Safari, Chrome and Opera > 12.1 */
         -moz-animation: fadein 0.8s; /* Firefox < 16 */
         -ms-animation: fadein 0.8s; /* Internet Explorer */
         -o-animation: fadein 0.8s; /* Opera < 12.1 */
         animation: fadein 0.8s;
-      }
-      h1,
-      p {
-        font-family: Poppins, sans-serif;
       }
       @keyframes fadein {
         from {
