@@ -6,32 +6,31 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Tuesday, 2nd February 2021 3:05:35 pm
+ * Last Modified: Sunday, 7th February 2021 11:57:34 am
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
  */
 
-import React, { useState } from "react";
-import { Document, Page } from "react-pdf";
+import { useState } from "react";
+import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import EmptyState from "../global/EmptyState";
 import Loading from "../global/Loading";
 
-const AllPages = (props: any) => {
+interface IProps {
+  pdf: string;
+}
+
+const AllPages = ({ pdf }: IProps) => {
   const [numPages, setNumPages] = useState(null);
 
   function onDocumentLoadSuccess({ numPages }: any) {
-    console.log("yes");
     setNumPages(numPages);
   }
-
-  console.log(window.location.origin + "/pdf.worker.js");
-  const { pdf } = props;
 
   return (
     <Document
       file={pdf}
-      options={{ workerSrc: window.location.origin + "/pdf.worker.js" }}
       onLoadSuccess={onDocumentLoadSuccess}
       loading={<Loading />}
       error={<EmptyState message="Could not load document" />}

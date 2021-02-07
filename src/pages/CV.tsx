@@ -6,14 +6,13 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Tuesday, 2nd February 2021 2:47:30 pm
+ * Last Modified: Sunday, 7th February 2021 11:58:27 am
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
  */
 
 import React, { useEffect } from "react";
-import { RouteComponentProps } from "react-router-dom";
 import AllPages from "../components/pdf/AllPages";
 
 interface IProps {
@@ -28,7 +27,7 @@ const CV = ({ lang }: IProps) => {
   }, [lang]);
 
   return (
-    <AllPages pdf="http://wspace.ie/files/CVTECH-JAN2021V21-DEUTSCH.pdf" />
+    <AllPages pdf="https://wspace.ie/files/CVTECH-JAN2021V21-DEUTSCH.pdf" />
   );
 };
 
