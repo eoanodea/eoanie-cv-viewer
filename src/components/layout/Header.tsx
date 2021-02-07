@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 2:10:10 pm
+ * Last Modified: Sunday, 7th February 2021 2:35:22 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -46,7 +46,6 @@ import { Link, withRouter } from "react-router-dom";
 import { config } from "../../config/config";
 
 import ReactGA from "react-ga";
-ReactGA.initialize(config.ga_id);
 
 /**
  * Header for the application
@@ -54,6 +53,8 @@ ReactGA.initialize(config.ga_id);
 const Header = ({ history }: any) => {
   const [isEnglish, setIsEnglish] = React.useState(true);
   const [displaySwitch, setDisplaySwitch] = React.useState(false);
+
+  ReactGA.initialize(config.ga_id);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
