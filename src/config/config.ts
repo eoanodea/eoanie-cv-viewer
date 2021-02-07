@@ -6,13 +6,21 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Monday, 25th January 2021 7:01:14 pm
+ * Last Modified: Sunday, 7th February 2021 1:17:52 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
  */
 
-export const config = {
+type IConfig = {
+  [key: string]: any;
+  env: string;
+  english: string;
+  german: string;
+};
+
+export const config: IConfig = {
   env: process.env.NODE_ENV || "development",
-  server_url: process.env.REACT_APP_SERVER_URL || "http://localhost:8000",
+  english: process.env.REACT_APP_CV_ENG_URL as string,
+  german: process.env.REACT_APP_CV_GRM_URL as string,
 };

@@ -6,37 +6,36 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 12:52:51 pm
+ * Last Modified: Sunday, 7th February 2021 1:21:49 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
  */
 
-import React, { useEffect } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import AllPages from "../components/pdf/AllPages";
-
-type CVURLType = {
-  [key: string]: any;
-  english: string;
-  german: string;
-};
+import { config } from "../config/config";
 
 interface IProps {
   lang: string;
 }
 
 const CV = ({ lang }: IProps) => {
-  // const [isEnglish, setIsEnglish] = React.useState(true);
-  const CVURLs: CVURLType = {
-    english: process.env.REACT_APP_CV_ENG_URL as string,
-    german: process.env.REACT_APP_CV_GRM_URL as string,
-  };
+  const pageRef = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(0);
 
-  // useEffect(() => {
-  //   console.log("props!, ", process.env.REACT_APP_CV_ENG_URL);
-  // }, [lang]);
+  useLayoutEffect(() => {
+    if (pageRef && pageRef.current) {
+      console.log("width", pageRef.current.offsetWidth);
+      setWidth(pageRef.current.offsetWidth);
+    }
+  }, [pageRef]);
 
-  return <AllPages pdf={CVURLs[lang]} />;
+  return (
+    <div ref={pageRef}>
+      <AllPages width={width} pdf={config[lang]} />
+    </div>
+  );
 };
 
 export default CV;

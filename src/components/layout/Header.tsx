@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 1:01:01 pm
+ * Last Modified: Sunday, 7th February 2021 1:31:27 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -27,8 +27,9 @@ import {
   Switch,
   Toolbar,
 } from "@material-ui/core";
-import { GitHub, Home } from "@material-ui/icons";
+import { GetApp, GitHub, Home, Mail } from "@material-ui/icons";
 import { Link, withRouter } from "react-router-dom";
+import { config } from "../../config/config";
 
 /**
  * Header for the application
@@ -44,11 +45,16 @@ const Header = ({ history }: any) => {
   };
 
   useEffect(() => {
-    history.listen(() => {
+    const checkPage = () => {
       if (window.location.pathname !== "/") {
         setDisplaySwitch(true);
         setIsEnglish(window.location.pathname.includes("/english"));
       } else setDisplaySwitch(false);
+    };
+
+    checkPage();
+    history.listen(() => {
+      checkPage();
     });
   }, [history]);
 
@@ -61,16 +67,31 @@ const Header = ({ history }: any) => {
 
         <div>
           {displaySwitch && (
-            <FormControlLabel
-              control={<Switch onChange={handleChange} checked={!isEnglish} />}
-              label={isEnglish ? "English 🇮🇪" : "Deutsch 🇩🇪"}
-            />
+            <React.Fragment>
+              <FormControlLabel
+                control={
+                  <Switch onChange={handleChange} checked={!isEnglish} />
+                }
+                label={isEnglish ? "English 🇮🇪" : "Deutsch 🇩🇪"}
+              />
+              <IconButton
+                href={config[window.location.pathname.split("cv/")[1]]}
+                download={`eoanodea-cv-${
+                  window.location.pathname.split("cv/")[1]
+                }`}
+              >
+                <GetApp />
+              </IconButton>
+            </React.Fragment>
           )}
           <IconButton
             href="https://github.com/eoanodea/eoanie-cv-viewer"
             target="_blank"
           >
             <GitHub />
+          </IconButton>
+          <IconButton href="https://about.eoan.ie/#contact" target="_blank">
+            <Mail />
           </IconButton>
         </div>
       </Toolbar>
