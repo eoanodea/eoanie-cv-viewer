@@ -45,6 +45,7 @@
       "react-app/jest"
     ]
   },
+  "proxy": "https://eoan.ie",
   "browserslist": {
     "production": [
       ">0.2%",
