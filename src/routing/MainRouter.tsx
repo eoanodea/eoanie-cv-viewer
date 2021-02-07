@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Tuesday, 2nd February 2021 3:02:47 pm
+ * Last Modified: Sunday, 7th February 2021 12:01:07 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -18,10 +18,12 @@ import { Grid } from "@material-ui/core";
 
 import Home from "../pages/Home";
 import CV from "../pages/CV";
+import Header from "../components/layout/Header";
 
 const MainRouter = () => {
   return (
     <React.Fragment>
+      <Header />
       <Grid
         container
         spacing={8}

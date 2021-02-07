@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Tuesday, 26th January 2021 1:52:49 pm
+ * Last Modified: Sunday, 7th February 2021 12:30:34 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -24,7 +24,6 @@ import {
   Card,
   CardHeader,
   Theme,
-  WithStyles,
 } from "@material-ui/core";
 import { Replay, Error } from "@material-ui/icons";
 

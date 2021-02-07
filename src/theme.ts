@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Friday, 22nd January 2021 4:47:34 pm
+ * Last Modified: Sunday, 7th February 2021 12:07:52 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -24,7 +24,10 @@ let theme = createMuiTheme({
     },
   },
   typography: {
-    fontFamily: ["Poppins", "sans-serif"].join(","),
+    fontFamily: ["Roboto", "sans-serif"].join(","),
+    h1: {
+      fontWeight: 800,
+    },
   },
   overrides: {
     MuiTextField: {
