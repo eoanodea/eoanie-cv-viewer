@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/static/js/main.27780a9c.chunk.js",
+    "main.js.map": "/static/js/main.27780a9c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.bdc05246.js",
+    "runtime-main.js.map": "/static/js/runtime-main.bdc05246.js.map",
+    "static/js/2.ee8ae7a6.chunk.js": "/static/js/2.ee8ae7a6.chunk.js",
+    "static/js/2.ee8ae7a6.chunk.js.map": "/static/js/2.ee8ae7a6.chunk.js.map",
+    "index.html": "/index.html",
+    "service-worker.js": "/service-worker.js",
+    "service-worker.js.map": "/service-worker.js.map",
+    "static/js/2.ee8ae7a6.chunk.js.LICENSE.txt": "/static/js/2.ee8ae7a6.chunk.js.LICENSE.txt",
+    "static/js/pdf.worker.entry.8fd51dfc.worker.js": "/static/js/pdf.worker.entry.8fd51dfc.worker.js",
+    "static/js/pdf.worker.entry.8fd51dfc.worker.js.LICENSE.txt": "/static/js/pdf.worker.entry.8fd51dfc.worker.js.LICENSE.txt",
+    "static/js/pdf.worker.entry.8fd51dfc.worker.js.map": "/static/js/pdf.worker.entry.8fd51dfc.worker.js.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bdc05246.js",
+    "static/js/2.ee8ae7a6.chunk.js",
+    "static/js/main.27780a9c.chunk.js"
+  ]
+}
