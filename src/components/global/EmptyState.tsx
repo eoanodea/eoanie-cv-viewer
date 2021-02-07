@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 12:30:34 pm
+ * Last Modified: Sunday, 7th February 2021 5:50:56 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -32,6 +32,8 @@ const styles = ({ spacing }: Theme) =>
     wrapper: {
       padding: spacing(4),
       textAlign: "center",
+      maxWidth: "800px",
+      margin: "0 auto",
     },
     icon: {
       fontSize: "3em",

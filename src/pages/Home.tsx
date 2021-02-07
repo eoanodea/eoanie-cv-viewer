@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 5:30:01 pm
+ * Last Modified: Sunday, 7th February 2021 5:50:20 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -27,6 +27,8 @@ import React from "react";
 const styles = () =>
   createStyles({
     root: {
+      maxWidth: "800px",
+      margin: "0 auto",
       height: "500px",
       display: "flex",
       textAlign: "center",
@@ -64,7 +66,7 @@ const Home = ({ classes }: IProps) => {
           aria-label="Open CV in English"
           to="/cv/english"
         >
-          English 🇮🇪
+          English
         </Button>
         <Button
           variant="contained"
@@ -73,7 +75,7 @@ const Home = ({ classes }: IProps) => {
           aria-label="Open CV in German"
           to="/cv/german"
         >
-          Deutsch 🇩🇪
+          Deutsch
         </Button>
       </CardActions>
     </Card>

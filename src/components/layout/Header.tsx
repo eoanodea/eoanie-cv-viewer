@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 5:30:01 pm
+ * Last Modified: Sunday, 7th February 2021 5:47:59 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -77,7 +77,7 @@ const Header = ({ history }: any) => {
                 control={
                   <Switch onChange={handleChange} checked={!isEnglish} />
                 }
-                label={isEnglish ? "English 🇮🇪" : "Deutsch 🇩🇪"}
+                label={isEnglish ? "English" : "Deutsch"}
               />
               <IconButton
                 aria-label="Download CV"
