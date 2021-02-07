@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 1:31:27 pm
+ * Last Modified: Sunday, 7th February 2021 1:41:26 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -46,7 +46,7 @@ const Header = ({ history }: any) => {
 
   useEffect(() => {
     const checkPage = () => {
-      if (window.location.pathname !== "/") {
+      if (window.location.pathname.includes("/cv/")) {
         setDisplaySwitch(true);
         setIsEnglish(window.location.pathname.includes("/english"));
       } else setDisplaySwitch(false);
@@ -90,9 +90,12 @@ const Header = ({ history }: any) => {
           >
             <GitHub />
           </IconButton>
-          <IconButton href="https://about.eoan.ie/#contact" target="_blank">
+          <IconButton component={Link} to="/contact">
             <Mail />
           </IconButton>
+          {/* <IconButton href="https://about.eoan.ie/#contact" target="_blank">
+            <Mail />
+          </IconButton> */}
         </div>
       </Toolbar>
     </AppBar>
