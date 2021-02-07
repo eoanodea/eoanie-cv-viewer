@@ -1,5 +1,7 @@
 # CV Viewer Application
 
+![CI](https://github.com/eoanodea/eoanie-cv-viewer/workflows/CI/badge.svg)
+
 A simple React app which displays my CV in English & German. The application uses Material UI as a component library.
 
 ### Demo
