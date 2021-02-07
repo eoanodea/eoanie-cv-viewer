@@ -6,7 +6,21 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 1:41:26 pm
+ * Last Modified: Sunday, 7th February 2021 2:10:10 pm
+ * Modified By: Eoan O'Dea (eoan@web-space.design>)
+ * -----
+ * Copyright 2021 WebSpace, WebSpace
+ */
+
+/*
+ * File: Header.tsx
+ * Project: cv-viewer
+ * Version 0.1.0
+ * File Created: Sunday, 7th February 2021 11:59:39 am
+ * Author: Eoan O'Dea (eoan@web-space.design)
+ * -----
+ * File Description:
+ * Last Modified: Sunday, 7th February 2021 2:09:59 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -30,6 +44,9 @@ import {
 import { GetApp, GitHub, Home, Mail } from "@material-ui/icons";
 import { Link, withRouter } from "react-router-dom";
 import { config } from "../../config/config";
+
+import ReactGA from "react-ga";
+ReactGA.initialize(config.ga_id);
 
 /**
  * Header for the application
@@ -55,6 +72,7 @@ const Header = ({ history }: any) => {
     checkPage();
     history.listen(() => {
       checkPage();
+      ReactGA.pageview(window.location.pathname + window.location.search);
     });
   }, [history]);
 

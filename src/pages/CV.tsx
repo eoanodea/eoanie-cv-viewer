@@ -6,7 +6,7 @@
  * Author: Eoan O'Dea (eoan@web-space.design)
  * -----
  * File Description:
- * Last Modified: Sunday, 7th February 2021 1:21:49 pm
+ * Last Modified: Sunday, 7th February 2021 2:13:47 pm
  * Modified By: Eoan O'Dea (eoan@web-space.design>)
  * -----
  * Copyright 2021 WebSpace, WebSpace
@@ -26,7 +26,6 @@ const CV = ({ lang }: IProps) => {
 
   useLayoutEffect(() => {
     if (pageRef && pageRef.current) {
-      console.log("width", pageRef.current.offsetWidth);
       setWidth(pageRef.current.offsetWidth);
     }
   }, [pageRef]);
