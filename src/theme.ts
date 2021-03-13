@@ -21,7 +21,7 @@ let theme = createMuiTheme({
       main: "#F14719",
     },
     secondary: {
-      main: "#F14719",
+      main: "#fff",
     },
     type: "dark",
   },
@@ -30,6 +30,20 @@ let theme = createMuiTheme({
     h1: {
       fontWeight: 800,
       fontSize: "3.4rem",
+    },
+    h2: {
+      fontWeight: 500,
+      fontSize: "2rem",
+    },
+    h3: {
+      color: "#fff",
+      fontSize: "1.6rem",
+    },
+    body1: {
+      color: "#fff",
+    },
+    caption: {
+      color: "#ffffffb3",
     },
   },
   overrides: {

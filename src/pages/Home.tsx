@@ -88,8 +88,8 @@ const styles = ({ palette, spacing }: Theme) =>
     },
     button: {
       margin: spacing(2),
-      backgroundColor: palette.secondary.main,
-      color: "#fff",
+      // backgroundColor: palette.secondary.main,
+      // color: "#fff",
     },
   });
 
@@ -134,29 +134,35 @@ const Home = ({ classes }: IProps) => {
       </Fade>
 
       <div className={classes.content}>
-        <div className={classes.buttonWrapper}>
-          {/* <Typography variant="h1" style={{ color: "#fff" }}>
+        {loaded && (
+          <div className={classes.buttonWrapper}>
+            {/* <Typography variant="h1" style={{ color: "#fff" }}>
             Pick a language
           </Typography> */}
-          <Button
-            component={Link}
-            className={classes.button}
-            aria-label="Open CV in English"
-            to="/cv/english"
-          >
-            English
-            {/* whos there */}
-          </Button>
-          <Button
-            component={Link}
-            aria-label="Open CV in German"
-            to="/cv/german"
-            className={classes.button}
-          >
-            Deutsch
-            {/* wer da ist */}
-          </Button>
-        </div>
+            <Button
+              component={Link}
+              className={classes.button}
+              aria-label="Open CV in English"
+              to="/cv/english"
+              variant="contained"
+              color="primary"
+            >
+              English
+              {/* whos there */}
+            </Button>
+            <Button
+              component={Link}
+              aria-label="Open CV in German"
+              to="/cv/german"
+              className={classes.button}
+              variant="contained"
+              color="primary"
+            >
+              Deutsch
+              {/* wer da ist */}
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
