@@ -159,12 +159,7 @@ const AllPages = ({ pdf, width, classes }: IProps) => {
       error={<EmptyState message="Could not load document" />}
     >
       {Array.from(new Array(numPages), (el, index) => (
-        <Page
-          width={width}
-          key={`page_${index + 1}`}
-          pageNumber={index + 1}
-          customTextRenderer={({ str }) => <p>`${str}`</p>}
-        />
+        <Page width={width} key={`page_${index + 1}`} pageNumber={index + 1} />
       ))}
     </Document>
     // </React.Fragment>
