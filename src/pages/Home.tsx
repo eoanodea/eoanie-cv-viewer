@@ -14,19 +14,22 @@
 
 import {
   Button,
-  Card,
-  CardActions,
-  CardContent,
   createStyles,
-  Typography,
+  Fade,
+  Theme,
   withStyles,
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
+
+import { Player } from "@lottiefiles/react-lottie-player";
+import data from "./../assets/lottie/lf30_editor_ifuollbc.json";
+
 import React from "react";
 
-const styles = () =>
+const styles = ({ palette, spacing }: Theme) =>
   createStyles({
     root: {
+      backgroundColor: palette.secondary.main,
       maxWidth: "800px",
       margin: "0 auto",
       height: "500px",
@@ -36,49 +39,126 @@ const styles = () =>
       flexDirection: "column",
       justifyContent: "space-evenly",
     },
-    actions: {
-      justifyContent: "center",
+    wrapper: {
+      position: "absolute",
+      top: 50,
+      left: 0,
+      width: "100vw",
+      height: "-webkit-fill-available",
+      display: "flex",
+      overflow: "hidden",
+      zIndex: 10,
+      "& iframe": {
+        width: "100vw",
+        // height: "100vw",
+        height: "-webkit-fill-available",
+        zIndex: 0,
+        position: "absolute",
+        top: 0,
+        left: 0,
+        bottom: 0,
+        right: 0,
+      },
+    },
+    content: {
+      alignSelf: "flex-end",
+      width: "100%",
+      margin: spacing(4),
+      height: "160px",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "space-between",
+      zIndex: 1,
+      flexWrap: "wrap",
+    },
+    lottieWrapper: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+      bottom: 0,
+      right: 0,
+      "& #lottie": {
+        height: "100vh",
+      },
+      // height,
+    },
+    buttonWrapper: {
+      display: "flex",
+    },
+    button: {
+      margin: spacing(2),
+      backgroundColor: palette.secondary.main,
+      color: "#fff",
     },
   });
 
 type IProps = {
   classes: {
     root: any;
-    actions: string;
+    // actions: string;
+    lottieWrapper: string;
+    wrapper: string;
+    content: string;
+    buttonWrapper: string;
+    button: string;
   };
 };
 
 const Home = ({ classes }: IProps) => {
+  const [loaded, setLoaded] = React.useState(false);
+
   return (
-    <Card className={classes.root}>
-      <CardContent>
-        <Typography variant="h1">Welcome</Typography>
-        <br />
-        <Typography variant="body1">
-          Select a language below to view the CV
-        </Typography>
-      </CardContent>
-      <CardActions className={classes.actions}>
-        <Button
-          variant="contained"
-          color="primary"
-          component={Link}
-          aria-label="Open CV in English"
-          to="/cv/english"
-        >
-          English
-        </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          component={Link}
-          aria-label="Open CV in German"
-          to="/cv/german"
-        >
-          Deutsch
-        </Button>
-      </CardActions>
-    </Card>
+    <div className={classes.wrapper}>
+      <Fade in={loaded} timeout={500}>
+        <iframe
+          title="Hero"
+          onLoad={() => {
+            setLoaded(true);
+          }}
+          src={process.env.REACT_APP_HERO_P5_SKETCH}
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
+      </Fade>
+      <Fade in={loaded} timeout={1500}>
+        <div className={classes.lottieWrapper}>
+          <Player
+            src={data}
+            background="transparent"
+            style={{ width: "150px", margin: "auto" }}
+            loop
+            autoplay
+          ></Player>
+        </div>
+      </Fade>
+
+      <div className={classes.content}>
+        <div className={classes.buttonWrapper}>
+          {/* <Typography variant="h1" style={{ color: "#fff" }}>
+            Pick a language
+          </Typography> */}
+          <Button
+            component={Link}
+            className={classes.button}
+            aria-label="Open CV in English"
+            to="/cv/english"
+          >
+            English
+            {/* whos there */}
+          </Button>
+          <Button
+            component={Link}
+            aria-label="Open CV in German"
+            to="/cv/german"
+            className={classes.button}
+          >
+            Deutsch
+            {/* wer da ist */}
+          </Button>
+        </div>
+      </div>
+    </div>
   );
 };
 

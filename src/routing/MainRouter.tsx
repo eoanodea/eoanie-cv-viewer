@@ -29,7 +29,11 @@ const MainRouter = () => {
       <Grid
         container
         justify="center"
-        style={{ marginTop: "20px", marginBottom: "20px" }}
+        style={{
+          marginTop: "20px",
+          marginBottom: "20px",
+          height: "100vh",
+        }}
       >
         <Grid item xs={11}>
           <Switch>

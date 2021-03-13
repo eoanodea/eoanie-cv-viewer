@@ -64,7 +64,7 @@ const Header = ({ history }: any) => {
   }, [history]);
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" style={{ backgroundColor: "#000" }}>
       <Toolbar style={{ justifyContent: "space-between" }}>
         <IconButton aria-label="Home" component={Link} to="/">
           <Home />

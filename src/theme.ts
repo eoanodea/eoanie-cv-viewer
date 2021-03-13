@@ -17,11 +17,13 @@ import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
 let theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#2196f3",
+      // main: "#fff",
+      main: "#F14719",
     },
     secondary: {
-      main: "#ffc400",
+      main: "#F14719",
     },
+    type: "dark",
   },
   typography: {
     fontFamily: ["Roboto", "sans-serif"].join(","),

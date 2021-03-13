@@ -39,6 +39,7 @@ const styles = ({ palette }: Theme) =>
     root: {
       // height: "500px",
       display: "flex",
+      background: "#222",
       // textAlign: "center",
       // alignItems: "center",
       flexDirection: "column",
