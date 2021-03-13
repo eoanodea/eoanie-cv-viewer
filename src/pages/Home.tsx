@@ -40,7 +40,7 @@ const styles = ({ palette, spacing }: Theme) =>
       justifyContent: "space-evenly",
     },
     wrapper: {
-      position: "absolute",
+      position: "fixed",
       top: 50,
       left: 0,
       width: "100vw",
@@ -136,9 +136,6 @@ const Home = ({ classes }: IProps) => {
       <div className={classes.content}>
         {loaded && (
           <div className={classes.buttonWrapper}>
-            {/* <Typography variant="h1" style={{ color: "#fff" }}>
-            Pick a language
-          </Typography> */}
             <Button
               component={Link}
               className={classes.button}
