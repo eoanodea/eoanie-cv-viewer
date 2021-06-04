@@ -40,8 +40,9 @@ const Header = ({ history }: any) => {
   const [isEnglish, setIsEnglish] = React.useState(true);
   const [displaySwitch, setDisplaySwitch] = React.useState(false);
 
-  console.log("Initializing GA", config.ga_id);
+  console.log("Initializing GA";
   ReactGA.initialize(config.ga_id);
+  ReactGA.pageview(window.location.pathname + window.location.search);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
