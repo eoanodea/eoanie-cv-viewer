@@ -40,6 +40,7 @@ const Header = ({ history }: any) => {
   const [isEnglish, setIsEnglish] = React.useState(true);
   const [displaySwitch, setDisplaySwitch] = React.useState(false);
 
+  console.log("Initializing GA", config.ga_id);
   ReactGA.initialize(config.ga_id);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
