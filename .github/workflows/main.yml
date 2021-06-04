@@ -29,6 +29,7 @@ jobs:
           REACT_APP_CV_ENG_URL: ${{ secrets.REACT_APP_CV_ENG_URL }}
           REACT_APP_CV_GRM_URL: ${{ secrets.REACT_APP_CV_GRM_URL }}
           REACT_APP_HERO_P5_SKETCH: ${{ secrets.REACT_APP_HERO_P5_SKETCH }}
+          REACT_APP_GA_ID: ${{ secrets.REACT_APP_GA_ID }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
