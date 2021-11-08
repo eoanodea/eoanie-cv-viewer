@@ -83,16 +83,16 @@ const Contact = ({ classes }: IProps) => {
     {
       name: "Get in touch",
       secondary: "Send me an email",
-      link: "https://about.eoan.ie#contact",
+      link: "mailto:hello@eoan.ie",
       icon: <Send />,
       ariaLabel: "Open my contact form",
     },
     {
       name: "WebSpace",
-      secondary: "Hire me as a developer",
+      secondary: "Hire us for a project",
       link: "https://web-space.design",
       icon: <Cloud />,
-      ariaLabel: "Open my website",
+      ariaLabel: "Open my company's website",
     },
   ];
   return (
