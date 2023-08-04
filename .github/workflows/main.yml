@@ -23,7 +23,7 @@ jobs:
       - name: Build
         run: |
           yarn install
-          yarn run-script build
+          yarn run build
         env:
           NODE_ENV: production
           REACT_APP_CV_ENG_URL: ${{ secrets.REACT_APP_CV_ENG_URL }}
