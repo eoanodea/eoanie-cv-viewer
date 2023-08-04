@@ -28,9 +28,10 @@ import {
   Toolbar,
 } from "@material-ui/core";
 import { GetApp, GitHub, Home, Mail } from "@material-ui/icons";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { config } from "../../config/config";
 
+import { useLocation } from "react-router-dom";
 import ReactGA from "react-ga";
 
 /**
@@ -39,6 +40,8 @@ import ReactGA from "react-ga";
 const Header = ({ history }: any) => {
   const [isEnglish, setIsEnglish] = React.useState(true);
   const [displaySwitch, setDisplaySwitch] = React.useState(false);
+
+  const location = useLocation();
 
   console.log("Initializing GA");
   ReactGA.initialize(config.ga_id);
@@ -52,18 +55,17 @@ const Header = ({ history }: any) => {
 
   useEffect(() => {
     const checkPage = () => {
-      if (window.location.pathname.includes("/cv/")) {
+      if (location.pathname.includes("/cv/")) {
         setDisplaySwitch(true);
-        setIsEnglish(window.location.pathname.includes("/english"));
-      } else setDisplaySwitch(false);
+        setIsEnglish(location.pathname.includes("/english"));
+      } else {
+        setDisplaySwitch(false);
+      }
+      ReactGA.pageview(location.pathname + location.search);
     };
 
     checkPage();
-    history.listen(() => {
-      checkPage();
-      ReactGA.pageview(window.location.pathname + window.location.search);
-    });
-  }, [history]);
+  }, [location]);
 
   return (
     <AppBar position="sticky" style={{ backgroundColor: "#000" }}>
@@ -109,4 +111,4 @@ const Header = ({ history }: any) => {
   );
 };
 
-export default withRouter(Header);
+export default Header;

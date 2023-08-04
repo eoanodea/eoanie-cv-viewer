@@ -15,14 +15,13 @@
 import React, { useLayoutEffect, useRef, useState } from "react";
 import AllPages from "../components/pdf/AllPages";
 import { config } from "../config/config";
+import { useParams } from "react-router-dom";
 
-interface IProps {
-  lang: string;
-}
-
-const CV = ({ lang }: IProps) => {
+const CV = () => {
   const pageRef = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(0);
+
+  const { lang } = useParams();
 
   useLayoutEffect(() => {
     if (pageRef && pageRef.current) {
@@ -32,7 +31,7 @@ const CV = ({ lang }: IProps) => {
 
   return (
     <div ref={pageRef}>
-      <AllPages width={width} pdf={config[lang]} />
+      <AllPages width={width} pdf={config[lang ? lang : "english"]} />
     </div>
   );
 };

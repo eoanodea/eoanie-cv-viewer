@@ -13,7 +13,7 @@
  */
 
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Grid } from "@material-ui/core";
 
 import Home from "../pages/Home";
@@ -36,20 +36,18 @@ const MainRouter = () => {
         }}
       >
         <Grid item xs={11}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route
-              path="/cv/:lang"
-              render={(props) => <CV lang={props.match.params.lang} />}
-            />
-            <Route path="/contact" component={Contact} />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cv/:lang" element={<CV />} />
+            <Route path="/contact" element={<Contact />} />
 
             <Route
-              render={() => (
+              path="*"
+              element={
                 <EmptyState message="The page you are looking for does not exist" />
-              )}
+              }
             />
-          </Switch>
+          </Routes>
         </Grid>
       </Grid>
     </React.Fragment>
