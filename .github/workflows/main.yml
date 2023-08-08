@@ -17,14 +17,18 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+
+      - name: Install dependencies
+        run: yarn install
+
       - name: Build
-        run: |
-          yarn install
-          yarn run build
+        run: yarn run build
         env:
           NODE_ENV: production
           REACT_APP_CV_ENG_URL: ${{ secrets.REACT_APP_CV_ENG_URL }}
@@ -35,5 +39,5 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          BRANCH: gh-pages
-          FOLDER: build
+          branch: gh-pages
+          folder: build
